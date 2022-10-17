@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-DragDrop-HTML-form-builder/static/css/main.8bf0cc7d.css",
-    "main.js": "/React-DragDrop-HTML-form-builder/static/js/main.967fe45d.js",
+    "main.js": "/React-DragDrop-HTML-form-builder/static/js/main.09870e8c.js",
     "static/js/1983.354432c5.chunk.js": "/React-DragDrop-HTML-form-builder/static/js/1983.354432c5.chunk.js",
     "static/js/2355.f8603cf5.chunk.js": "/React-DragDrop-HTML-form-builder/static/js/2355.f8603cf5.chunk.js",
     "static/js/8625.b173823c.chunk.js": "/React-DragDrop-HTML-form-builder/static/js/8625.b173823c.chunk.js",
@@ -111,7 +111,7 @@
     "static/js/787.1e960e06.chunk.js": "/React-DragDrop-HTML-form-builder/static/js/787.1e960e06.chunk.js",
     "index.html": "/React-DragDrop-HTML-form-builder/index.html",
     "main.8bf0cc7d.css.map": "/React-DragDrop-HTML-form-builder/static/css/main.8bf0cc7d.css.map",
-    "main.967fe45d.js.map": "/React-DragDrop-HTML-form-builder/static/js/main.967fe45d.js.map",
+    "main.09870e8c.js.map": "/React-DragDrop-HTML-form-builder/static/js/main.09870e8c.js.map",
     "1983.354432c5.chunk.js.map": "/React-DragDrop-HTML-form-builder/static/js/1983.354432c5.chunk.js.map",
     "2355.f8603cf5.chunk.js.map": "/React-DragDrop-HTML-form-builder/static/js/2355.f8603cf5.chunk.js.map",
     "8625.b173823c.chunk.js.map": "/React-DragDrop-HTML-form-builder/static/js/8625.b173823c.chunk.js.map",
@@ -222,6 +222,6 @@
   },
   "entrypoints": [
     "static/css/main.8bf0cc7d.css",
-    "static/js/main.967fe45d.js"
+    "static/js/main.09870e8c.js"
   ]
 }

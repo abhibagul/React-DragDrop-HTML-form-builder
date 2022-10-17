@@ -1,13 +1,23 @@
 .highlighted{
-  background-color: aqua;
+  border: 2px solid rgb(15, 176, 217) !important; 
+  
+  /* background: rgba(15, 176, 217,0.1) !important; */
+}
+.grabbing{
+  cursor: grabbing;
+}
+.indragitem{
+  border: 2px solid transparent;
 }
 .indragitem:hover{
-  background-color: aquamarine;
+  border: 2px solid rgb(15, 176, 217) !important; 
+  background: rgba(15, 176, 217,0.1) !important;
 }
-.dragdropper{
+.dragdropper, .indragitem{
   position: relative;
+  cursor: grab;
 }
-.dragdropper:before{
+.dragdropper:before, .indragitem:before{
   content: "";
   position: absolute;
   width: 100%;
@@ -16,12 +26,61 @@
   display: block;
 }
 .dustbin{
-  background-color: red;
+  background-color: transparent;
+  border: 2px dashed red;
   padding:20px;
   text-align: center;
-  color: white;
+  color: red;
   margin-top:20px
 }
 .dustact{
-  background-color: blue;
+  background-color: red;
+  border: 2px solid red;
+  color: #fff;
+}
+.empty{
+  background: #eee;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  border: 2px dashed grey;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top:30px
+}
+.empty.hover{
+  border: 2px solid rgb(15, 176, 217) !important; 
+  background: rgba(15, 176, 217,0.1) !important;
+  color: rgb(15, 176, 217)
+}
+.dynamicInput{
+  max-width: 100%;
+}
+.eloption {
+  box-sizing: border-box;
+  padding: 0px;
+  padding-bottom: 0px;
+}
+.optionrow{
+  margin: 5px 0px;
+}
+.align-right {
+  text-align:right;
+  box-sizing:border-box;
+  padding-right:25px
+}
+.option_input {
+  max-height: 250px;
+  overflow: auto;
+}
+.bottombar{
+  border-radius: calc(0.5rem - 1px);
+    border-bottom: 0px !important;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+.ml-2{
+  margin-left: 2px;;
 }

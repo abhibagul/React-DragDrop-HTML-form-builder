@@ -133,3 +133,13 @@
   bottom: 0px;
   right: 0px;
 }
+
+.maxh2 {
+  height: calc(100vh - 150px);
+  overflow-y:auto;
+}
+
+.cm-editor {
+  height: calc(100vh - 152px);
+  overflow-y: auto;
+}

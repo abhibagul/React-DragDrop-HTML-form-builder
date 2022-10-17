@@ -24,7 +24,7 @@ function App() {
     if ($('#element-option').length > 0) $('#element-option').html('');
     $('.highlighted').removeClass('.highlighted');
 
-    console.log(dragPosition.current, 'dp');
+    //console.log(dragPosition.current, 'dp');
 
 
     if (dragPosition.current > 0) {
@@ -62,7 +62,7 @@ function App() {
 
 
   const handleAdding = (e) => {
-    console.log('adding started');
+    //console.log('adding started');
   }
 
   const addDragElem = (e) => {
@@ -92,7 +92,7 @@ function App() {
 
   const handleChange = (e) => {
     // TODO
-    console.log('change req');
+    //console.log('change req');
 
 
 
@@ -104,13 +104,13 @@ function App() {
     // if(el.length < 2){
     let el = $('<div/>').append(_elems[i]);
     // }
-    console.log(el, 'elb')
+    //console.log(el, 'elb')
     $('.option-wrapper-inner').map(function () {
-      // console.log($(this).html(), $(this).find('.contenttxt').val(),el.html()); 
+      // //console.log($(this).html(), $(this).find('.contenttxt').val(),el.html()); 
       let elsep = $(this).attr('data-element');
-      console.log('======================');
-      console.log('===== ' + elsep + ' =======');
-      console.log('======================');
+      //console.log('======================');
+      //console.log('===== ' + elsep + ' =======');
+      //console.log('======================');
 
 
       //should we go with the element or remove it?
@@ -122,7 +122,7 @@ function App() {
 
         //set attribs
         $(this).find('.attrib-options .row').map(function () {
-          //console.log('attr: ', $(this).find('.col-sm-4').text(), ' v:', $(this).find('.dynamicInput').val())
+          ////console.log('attr: ', $(this).find('.col-sm-4').text(), ' v:', $(this).find('.dynamicInput').val())
           el.find(elsep).attr($(this).find('.col-sm-4').text(), $(this).find('.dynamicInput').val())
         });
 
@@ -156,15 +156,15 @@ function App() {
         //   //class
         //   if ($(this).find('.isCsc').is(":checked")) {
         //     //add required attrib
-        //     console.log(el.find(elsep).attr('checked'),'before')
+        //     //console.log(el.find(elsep).attr('checked'),'before')
         //     el.find(elsep).attr('checked', 'checked');
-        //     console.log(el.find(elsep).attr('checked'),'after')
+        //     //console.log(el.find(elsep).attr('checked'),'after')
         //   } else {
-        //     console.log('change req to disable checkbox')
+        //     //console.log('change req to disable checkbox')
         //     //remove required attr
-        //     console.log(el.find(elsep).attr('checked'),'before')
+        //     //console.log(el.find(elsep).attr('checked'),'before')
         //     el.find(elsep).removeAttr('checked');
-        //     console.log(el.find(elsep).attr('checked'),'after')
+        //     //console.log(el.find(elsep).attr('checked'),'after')
         //   }
         // }
 
@@ -194,7 +194,7 @@ function App() {
 
           svl.addClass($(this).find('select').val());
 
-          console.log(el.find(elsep));
+          //console.log(el.find(elsep));
         }
 
         //content
@@ -205,7 +205,7 @@ function App() {
 
     });
 
-    // console.log(el.html(),'ela');
+    // //console.log(el.html(),'ela');
     _elems.splice(i, 1, el.html()); //lets try if it works?
 
     //update
@@ -216,7 +216,7 @@ function App() {
   }
 
   const removeSelector = (e) => {
-    // console.log('remove el', $(e.target).closest('button').attr('data-index'));
+    // //console.log('remove el', $(e.target).closest('button').attr('data-index'));
     if ($('#element-option').length > 0) $('#element-option').html('');
     let _elems = [...elems];
 
@@ -287,7 +287,7 @@ function App() {
     //create the elemental form
     $($e).children().each(function () {
 
-      console.log('item', this);
+      //console.log('item', this);
 
       // if($(this).hasClass('input-group-text')){
       //   this = $(this).find('input-group-text');
@@ -303,6 +303,7 @@ function App() {
       if (cls.length > 0) {
         cls = cls.join('.');
         cls = '.' + cls;
+        if (cls[cls.length - 1] === ".") cls = cls.slice(0, -1);
       } else {
         cls = '';
       }
@@ -397,7 +398,7 @@ function App() {
         // this.attributes is not a plain object, but an array
         // of attribute nodes, which contain both the name and value
         if (this.specified) {
-          // console.log(this.name, this.value);
+          // //console.log(this.name, this.value);
           if (this.name != 'checked') {
             ham.append('<div class="row optionrow"><div class="col-sm-4 text-right the_prop">' + this.name + '</div><div class="col-sm-8"><input class="form-control form-control-sm dynamicInput" type="text" value="' + this.value + '"></div></div>')
 
@@ -461,10 +462,10 @@ function App() {
 
   // const [htmlelems, setHtmlElems] = useState([]);
 
-  let inputelems = ['<label for=\'exampleEmailInput\' class="form-label">Email address</label><input type="email" id=\'exampleEmailInput\' value="" class="form-control " aria-describedby="emailHelp" placeholder=\'\' /><div id="emailHelp" class="form-text">We\'ll never share your email with anyone else.</div>', '<label for="exampleInputPassword1" class="form-label">Password</label><input type="password" value="" class="form-control" aria-describedby="passwordHelp" id="exampleInputPassword1" /><div id="passwordHelp" class="form-text">Should be at least 8 charachters.</div>', '<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><textarea value=" " class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>']
+  let inputelems = ['<label for=\'exampleEmailInput\' class="form-label">Email address</label><input type="email" id=\'exampleEmailInput\' value="" class="form-control" aria-describedby="emailHelp" placeholder=\'\' /><div id="emailHelp" class="form-text">We\'ll never share your email with anyone else.</div>', '<label for="exampleInputPassword1" class="form-label">Password</label><input type="password" value="" class="form-control" aria-describedby="passwordHelp" id="exampleInputPassword1" /><div id="passwordHelp" class="form-text">Should be at least 8 charachters.</div>', '<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><textarea value=" " class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>']
 
 
-  let headeerlems = ['<h1>HTML Form h1</h1>', '<h2>HTML Form h2</h2>', '<h3>HTML Form h3</h3>', '<h4>HTML Form h4</h4>', '<h5>HTML Form h5</h5>', '<h6>HTML Form h6</h6>','<label>My Label</label>'];
+  let headeerlems = ['<h1>HTML Form h1</h1>', '<h2>HTML Form h2</h2>', '<h3>HTML Form h3</h3>', '<h4>HTML Form h4</h4>', '<h5>HTML Form h5</h5>', '<h6>HTML Form h6</h6>', '<label>My Label</label>'];
 
   let checboxandradio = ['<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><label class="form-check-label" for="flexCheckDefault">  Default checkbox</label>', '<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"><label class="form-check-label" for="flexRadioDefault1">Default radio</label>'];
 
@@ -477,270 +478,271 @@ function App() {
 
 
   return (
-      <>
-      <Nav/>
+    <>
+      <Nav />
       <div className="container">
-      <div className='row mt-3'>
+        <div className='row mt-3'>
 
-      <div
+          <div
             className='dustbin'
             onDragEnter={(e) => {
               dragPosition.current = -1;
               if (!$(e.target).hasClass('dustact')) $(e.target).addClass('dustact')
               //$(e.target).text("Drop it.. i am hungry...");
             }}
-            onDragLeave={(e) => { if ($(e.target).hasClass('dustact')) $(e.target).removeClass('dustact');  }}
+            onDragLeave={(e) => { if ($(e.target).hasClass('dustact')) $(e.target).removeClass('dustact'); }}
 
           >
-           <FontAwesomeIcon icon="trash" /> Throw into the trash!
+            <FontAwesomeIcon icon="trash" /> Throw into the trash!
           </div>
 
-        <div className='col-md-6 col-sm-6 inputs-option maxht'>
+          <div className='col-md-6 col-sm-6 inputs-option maxht'>
 
-          <div className='dragnoeffect' onDragEnter={(e) => dragPosition.current = 0}>
+            <div className='dragnoeffect' onDragEnter={(e) => dragPosition.current = 0}>
 
-            <div className="accordion accordion-flush" id="accordionFlushExample">
-              <div className="accordion-item inputaccord">
-                <h2 className="accordion-header" id="flush-headingOne">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-                    Input Elements
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      inputelems && inputelems.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
+              <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Elements</button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">HTML Code</button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">About</button>
+                </li>
+              </ul>
+              <div className="tab-content" id="pills-tabContent">
+                <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                  <div class="card maxh2">
+                    <div class="">
+                      <div className="accordion accordion-flush" id="accordionFlushExample">
+                        <div className="accordion-item inputaccord">
+                          <h2 className="accordion-header" id="flush-headingOne">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                              Input Elements
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                inputelems && inputelems.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
                           </div>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item headeraccord">
-                <h2 className="accordion-header" id="flush-headingTwo">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Header/ Label Elements
-                  </button>
-                </h2>
-                <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      headeerlems && headeerlems.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
+                        </div>
+                        <div className="accordion-item headeraccord">
+                          <h2 className="accordion-header" id="flush-headingTwo">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              Header/ Label Elements
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                headeerlems && headeerlems.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
                           </div>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item checkboxradioaccord">
-                <h2 className="accordion-header" id="flush-headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Checkbox / Radio
-                  </button>
-                </h2>
-                <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      checboxandradio && checboxandradio.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
+                        </div>
+                        <div className="accordion-item checkboxradioaccord">
+                          <h2 className="accordion-header" id="flush-headingFour">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                              Checkbox / Radio
+                            </button>
+                          </h2>
+                          <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                checboxandradio && checboxandradio.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
                           </div>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
-              </div>
-              
-              <div className="accordion-item inputgroupsaccord">
-                <h2 className="accordion-header" id="flush-headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    Input Groups
-                  </button>
-                </h2>
-                <div id="flush-collapseSix" className="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      inputgroups && inputgroups.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
+                        </div>
+                        <div className="accordion-item inputgroupsaccord">
+                          <h2 className="accordion-header" id="flush-headingFour">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                              Input Groups
+                            </button>
+                          </h2>
+                          <div id="flush-collapseSix" className="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                inputgroups && inputgroups.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
                           </div>
-                        )
-                      })
-                    }
-                  </div>
-                </div>
-              </div>
+                        </div>
+                        <div className="accordion-item inputgroupsaccord">
+                          <h2 className="accordion-header" id="flush-headingFour">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                              Floating Elements
+                            </button>
+                          </h2>
+                          <div id="flush-collapseSeven" className="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                floatingelems && floatingelems.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
+                        </div>
+                        <div className="accordion-item otherinputsaccord">
+                          <h2 className="accordion-header" id="flush-headingFour">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                              Other inputs
+                            </button>
+                          </h2>
+                          <div id="flush-collapseFive" className="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                            <div className="accordion-body">
+                              {
+                                otherelems && otherelems.map(function (xe, i) {
+                                  return (
+                                    <div
+                                      className='input-text-add dragdropper'
+                                      draggable="true"
+                                      onDragStart={(e) => handleAdding(e)}
+                                      onDragEnd={(e) => addDragElem(e)}
+                                      key={i}>
+                                      {Parser(xe)}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-              <div className="accordion-item inputgroupsaccord">
-                <h2 className="accordion-header" id="flush-headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                    Floating Elements
-                  </button>
-                </h2>
-                <div id="flush-collapseSeven" className="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      floatingelems && floatingelems.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
-                          </div>
-                        )
-                      })
-                    }
+                    </div>
                   </div>
                 </div>
-              </div>
-
-
-              <div className="accordion-item otherinputsaccord">
-                <h2 className="accordion-header" id="flush-headingFour">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    Other inputs
-                  </button>
-                </h2>
-                <div id="flush-collapseFive" className="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    {
-                      otherelems && otherelems.map(function (xe, i) {
-                        return (
-                          <div
-                            className='input-text-add dragdropper'
-                            draggable="true"
-                            onDragStart={(e) => handleAdding(e)}
-                            onDragEnd={(e) => addDragElem(e)}
-                            key={i}>
-                            {Parser(xe)}
-                          </div>
-                        )
-                      })
-                    }
-                  </div>
+                <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                  <div class="card maxh2">
+                    <div class="">
+                      <CodeMirror value={genHtml(elems)} extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]} />
+                    </div></div>
                 </div>
-              </div>
-              <div className="accordion-item htmlcodeaccord">
-                <h2 className="accordion-header" id="flush-headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    HTML Code
-                  </button>
-                </h2>
-                <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                    <CodeMirror value={genHtml(elems)} extensions={[markdown({ base: markdownLanguage, codeLanguages: languages })]} />
-                  </div>
-                </div>
-              </div>
-              
-              <div className="accordion-item htmlcodeaccord">
-                <h2 className="accordion-header" id="flush-headingThree">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseAbt" aria-expanded="false" aria-controls="flush-collapseAbt">
-                    About
-                  </button>
-                </h2>
-                <div id="flush-collapseAbt" className="accordion-collapse collapse" aria-labelledby="flush-headingAbt" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">
-                   <p>Created by <a href='https://github.com/abhibagul'>Abhishek B.</a><br/>You can find the source code for it below: <br/> <a href='https://github.com/abhibagul/React-DragDrop-HTML-form-builder'>https://github.com/abhibagul/React-DragDrop-HTML-form-builder</a></p>
-                   <p>This tool uses following plugins:<br/>
-                   <ol>
-                    <li>Codemirror</li>
-                    <li>jquery</li>
-                    <li>html react parser</li>
-                    <li>Bootstrap</li>
-                    <li>Font Awesome</li>
-                    </ol>
-                    and is created with React.
-                    </p>
+                <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                  <div class="card maxh2">
+                    <div class="card-body">
+                      <p>Created by <a href='https://github.com/abhibagul'>Abhishek B.</a><br />You can find the source code for it below: <br /> <a href='https://github.com/abhibagul/React-DragDrop-HTML-form-builder'>https://github.com/abhibagul/React-DragDrop-HTML-form-builder</a></p>
+                      <p>This tool uses following plugins:<br />
+                        <ol>
+                          <li>Codemirror</li>
+                          <li>jquery</li>
+                          <li>html react parser</li>
+                          <li>Bootstrap</li>
+                          <li>Font Awesome</li>
+                        </ol>
+                        and is created with React.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
 
-           
+
+
+          </div>
+          <div className='col-md-6 col-sm-6 output_form maxht' onDragEnter={(e) => dragPosition.current = 1}>
+            {(elems.length < 1) && <div
+              className='empty'
+              onDragEnter={(e) => { if (!$(e.target).hasClass('hover')) $(e.target).addClass('hover') }}
+              onDragLeave={(e) => { if ($(e.target).hasClass('hover')) $(e.target).removeClass('hover') }}
+            >
+              Add elements to your form</div>}
+            {
+
+              elems && elems.map(function (e, i) {
+                return (
+                  <OverlayTrigger
+                    container={this}
+                    trigger="click"
+                    rootClose
+                    placement="left"
+                    overlay={popoverLeft}
+                    key={i}
+                  >
+                    <div
+                      className="input_elem indragitem"
+                      draggable="true"
+                      onClick={(e) => handleDetails(e, i)}
+                      onDragStart={(e) => dragItem.current = i}
+                      onDragEnter={(e) => DragOverEl(e, i)}
+                      onDragLeave={(e) => DragLeaveEl(e, i)}
+                      onDragEnd={(e) => arrangeElem(e)}
+                      onDragOver={(e) => e.preventDefault()}
+                    >
+                      {Parser(e)}
+                    </div>
+                  </OverlayTrigger>
+                )
+              })
+            }
+
+
           </div>
 
-
-         
-
-        </div>
-        <div className='col-md-6 col-sm-6 output_form maxht' onDragEnter={(e) => dragPosition.current = 1}>
-          {(elems.length < 1) && <div
-            className='empty'
-            onDragEnter={(e) => { if (!$(e.target).hasClass('hover')) $(e.target).addClass('hover') }}
-            onDragLeave={(e) => { if ($(e.target).hasClass('hover')) $(e.target).removeClass('hover') }}
-          >
-            Add elements to your form</div>}
-          {
-
-            elems && elems.map(function (e, i) {
-              return (
-                <OverlayTrigger
-                  container={this}
-                  trigger="click"
-                  rootClose
-                  placement="left"
-                  overlay={popoverLeft}
-                  key={i}
-                >
-                  <div
-                    className="input_elem indragitem"
-                    draggable="true"
-                    onClick={(e) => handleDetails(e, i)}
-                    onDragStart={(e) => dragItem.current = i}
-                    onDragEnter={(e) => DragOverEl(e, i)}
-                    onDragLeave={(e) => DragLeaveEl(e, i)}
-                    onDragEnd={(e) => arrangeElem(e)}
-                    onDragOver={(e) => e.preventDefault()}
-                  >
-                    {Parser(e)}
-                  </div>
-                </OverlayTrigger>
-              )
-            })
-          }
-
-          
         </div>
 
       </div>
-
-    </div>
     </>
   );
 }
